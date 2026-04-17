@@ -100,7 +100,7 @@ a {
 }
 
 .logo::after {
-  content: "coaching profesional";
+  content: attr(data-subtitle);
   display: block;
   font-family: "Inter", sans-serif;
   font-size: 0.6rem;
@@ -161,6 +161,48 @@ a {
 
 .menu-toggle:hover {
   background: var(--primary-light);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "Inter", sans-serif;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-toggle-mobile {
+  margin-left: 0;
+}
+
+/* On desktop: hide mobile actions, show lang toggle inside nav */
+.nav-links .lang-toggle {
+  display: inline-flex;
 }
 
 /* ═══ HERO ═══ */
@@ -757,6 +799,14 @@ h3 {
     justify-content: center;
   }
 
+  .mobile-actions {
+    display: flex;
+  }
+
+  .nav-links .lang-toggle {
+    display: none;
+  }
+
   .nav-links {
     position: fixed;
     top: 72px;
@@ -795,9 +845,14 @@ h3 {
   }
 
   .hero-grid {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
     text-align: center;
+  }
+
+  .hero-visual {
+    order: -1;
   }
 
   .hero-text {
@@ -805,9 +860,6 @@ h3 {
     order: 2;
   }
 
-  .hero-visual {
-    order: 1;
-  }
 
   .lead {
     margin: 0 auto;
