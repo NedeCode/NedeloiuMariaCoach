@@ -802,11 +802,11 @@ h3 {
 
   .hero-text {
     text-align: center;
-    order: 1;
+    order: 2;
   }
 
   .hero-visual {
-    order: 2;
+    order: 1;
   }
 
   .lead {
@@ -835,6 +835,14 @@ h3 {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
+  }
+
+  .about-image-wrap {
+    order: 1;
+  }
+
+  .about-grid > div:not(.about-image-wrap) {
+    order: 2;
   }
 
   .about-image-wrap::before {
