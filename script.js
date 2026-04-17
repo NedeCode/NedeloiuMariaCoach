@@ -3,18 +3,34 @@ const navLinks = document.getElementById("navLinks");
 const year = document.getElementById("year");
 const bookingForm = document.getElementById("bookingForm");
 const formMessage = document.getElementById("formMessage");
+const header = document.querySelector(".site-header");
 
+// Mobile menu toggle
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.textContent = isOpen ? "✕" : "☰";
   });
 }
 
+// Close menu on link click
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
+    if (menuToggle) menuToggle.textContent = "☰";
   });
 });
+
+// Header shadow on scroll
+if (header) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 10) {
+      header.style.boxShadow = "0 4px 20px rgba(42, 35, 32, 0.08)";
+    } else {
+      header.style.boxShadow = "none";
+    }
+  });
+}
 
 if (year) {
   year.textContent = new Date().getFullYear();
