@@ -812,31 +812,67 @@ h3 {
     top: 72px;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(250, 248, 246, 0.98);
-    backdrop-filter: blur(20px);
-    padding: 2rem 1.5rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 20px 40px rgba(42, 35, 32, 0.15);
+    padding: 1rem;
     flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
+    align-items: stretch;
+    gap: 0.25rem;
     display: none;
     overflow-y: auto;
+    max-height: calc(100vh - 72px);
+    z-index: 999;
   }
 
   .nav-links.open {
     display: flex;
+    animation: slideDown 0.25s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .nav-links a {
-    font-size: 1.1rem;
-    padding: 0.9rem 1.5rem;
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 1rem 1.2rem;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-radius: var(--radius-sm);
+    color: var(--text);
+    border: 1px solid transparent;
+    transition: var(--transition);
   }
 
-  .nav-links a:hover {
+  .nav-links a:hover,
+  .nav-links a:active {
     background: var(--primary-light);
+    border-color: var(--border);
+    color: var(--primary-dark);
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 0.5rem;
+    text-align: center;
+    background: var(--primary) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-links .nav-cta:hover {
+    background: var(--primary-dark) !important;
   }
 
   /* Hero mobile */
