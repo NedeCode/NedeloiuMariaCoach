@@ -241,6 +241,7 @@ a {
   width: 100%;
   height: 560px;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
@@ -418,6 +419,7 @@ h3 {
   width: 100%;
   height: 500px;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
@@ -489,6 +491,7 @@ h3 {
   width: 100%;
   height: 340px;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   transition: var(--transition);
@@ -497,6 +500,10 @@ h3 {
 .image-grid img:hover {
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
+}
+
+.image-grid img.img-center-face {
+  object-position: center 30%;
 }
 
 /* ═══ COACHING INFO ═══ */
@@ -615,9 +622,10 @@ h3 {
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
+  align-items: start;
 }
 
 .testimonial {
@@ -630,6 +638,60 @@ h3 {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--border);
+}
+
+/* Scrollable wrapper for long testimonials */
+.testimonial-scroll {
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  position: relative;
+}
+
+.testimonial-scroll::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, var(--card));
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial--long:hover .testimonial-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.testimonial--long:hover .testimonial-scroll::after {
+  opacity: 0;
+}
+
+/* Custom scrollbar for testimonial */
+.testimonial-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.testimonial-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.testimonial-scroll::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
 }
 
 .testimonial::before {
@@ -910,7 +972,9 @@ h3 {
   }
 
   .hero-image {
-    height: 320px;
+    height: 380px;
+    object-fit: cover;
+    object-position: top center;
     border-radius: var(--radius-lg);
   }
 
@@ -938,7 +1002,9 @@ h3 {
   }
 
   .about-image {
-    height: 350px;
+    height: 380px;
+    object-fit: cover;
+    object-position: top center;
     border-radius: var(--radius-lg);
   }
 
@@ -955,7 +1021,9 @@ h3 {
   }
 
   .image-grid img {
-    height: 240px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
   }
 
   .coaching-benefits {

@@ -87,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
       testimonial_3: '"I felt support, structure and a lot of clarity. The process was warm and very useful."',
       testimonial_3_author: "— Executive coaching client",
       testimonial_video: "🎥 Watch video testimonial",
+      testimonial_4: `"I forgot to write to you when you asked me about the progress on my action steps, but I'm writing now: I followed almost all the steps I set for myself at our last meeting regarding developing the relationship with my daughters. The goal was to get them to communicate more. And the result exceeded my expectations: I experienced precious moments of connection, mutual words of encouragement, positive reactions to some challenges, walks and outings together.\nBut the most wonderful thing was when one day at home a bouquet of flowers and a letter from my older daughter were waiting for me. I was so moved because that gesture spoke to me more than 1,000 words.\nI wanted to tell you that I am very grateful for the meetings you had with me and that you accompanied me on this journey through coaching!\nI embrace you with great affection!"`,
+      testimonial_4_author: "— Coaching client",
 
       booking_tag: "Booking",
       booking_title: "Book directly from the calendar",
@@ -179,6 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
       testimonial_3: `„Am simțit susținere, structură și multă claritate. Procesul a fost cald și foarte util."`,
       testimonial_3_author: "— Client executive coaching",
       testimonial_video: "🎥 Vezi testimonialul video",
+      testimonial_4: `„Am uitat să îți scriu atunci când m-ai întrebat despre progresele în pașii de acțiune, dar îți scriu acum: am urmat aproape toți pașii care mi i-am propus la ultima noastră întâlnire referitor la dezvoltarea relației cu fiicele mele. Scopul era ca să le fac să comunice mai mult. Iar rezultatul a fost unul peste așteptări: am avut parte de momente scumpe de conectare, cuvinte de încurajare reciproce, reacții pozitive la unele provocări, plimbări și ieșiri împreună.\nDar cel mai minunat a fost când într-una din zile acasă mă aștepta un buchet de flori și o scrisoare de la fiica mai mare. Am fost atât de impresionată fiindcă astfel de gest mi-a vorbit mai mult decât 1000 de cuvinte.\nAm vrut să îți spun că sunt foarte recunoscătoare pentru întâlnirile care le-ai avut cu mine și că m-ai însoțit în această călătorie prin coaching!\nTe cuprind cu mare drag!"`,
+      testimonial_4_author: "— Client coaching",
 
       booking_tag: "Programare",
       booking_title: "Rezervă direct din calendar",
@@ -312,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       formMessage.textContent = "Cererea ta este pregătită. Se va deschide aplicația de email pentru trimitere.";
       setTimeout(function () {
-        window.location.href = "mailto:maria_ned@yahoo.com?subject=" + subject + "&body=" + body;
+        window.location.href = "mailto:marianaionica2015@gmail.com?subject=" + subject + "&body=" + body;
       }, 400);
       bookingForm.reset();
     });
